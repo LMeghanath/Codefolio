@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}Codefolio - Showcase Your Coding Excellence{% endblock %}
+
+{% block content %}
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">Your coding journey, visualized and optimized</div>
+                <h1>Showcase Your <span class="gradient-text">Coding Excellence</span></h1>
+                <p>Track, analyze, and showcase your competitive programming skills across LeetCode, Codeforces, and CodeChef with powerful analytics and insightful visualizations.</p>
+                <div class="hero-buttons">
+                    <a href="signup.html" class="btn btn-primary btn-lg">Get started</a>
+                    <a href="#features" class="btn btn-text">Learn more →</a>
+                </div>
+            </div>
+
+            <div class="dashboard-preview">
+                <div class="dashboard-card">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Problem Solving</h3>
+                            <div class="chart-container">
+                                <div class="bar-chart">
+                                    <div class="bar" style="height: 60%"></div>
+                                    <div class="bar" style="height: 80%"></div>
+                                    <div class="bar" style="height: 40%"></div>
+                                    <div class="bar" style="height: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Success Rate</h3>
+                            <div class="chart-container">
+                                <div class="circle-progress">
+                                    <div class="progress-ring"></div>
+                                    <span class="progress-text">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Unified Dashboard</h3>
+                    <p>Track your progress across multiple platforms in one place</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Performance Analytics</h3>
+                    <p>Detailed insights into your problem-solving patterns</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Topic Strengths</h3>
+                    <p>Identify your strongest algorithms and data structures</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👔</div>
+                    <h3>Recruiter Profiles</h3>
+                    <p>Share your coding journey with potential employers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Start Your Coding Journey Today</h2>
+            <p>Join thousands of developers who use Codefolio to track and showcase their skills.</p>
+            <div class="cta-buttons">
+                <a href="signup.html" class="btn btn-primary btn-lg">Create free account</a>
+                <a href="login.html" class="btn btn-outline btn-lg">Sign in</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

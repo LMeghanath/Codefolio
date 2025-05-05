@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up - Codefolio{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="auth-section">
+        <h2>Sign Up for Codefolio</h2>
+        <form method="post" action="{% url 'signup' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            <p class="mt-2 text-center">Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+            {% if form.errors %}
+                <div class="alert alert-danger mt-3">
+                    {% for field in form %}
+                        {{ field.errors }}
+                    {% endfor %}
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+        </form>
+    </section>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    .auth-section {
+        max-width: 400px;
+        margin: 3rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 0.75rem;
+        box-shadow: var(--shadow);
+    }
+
+    .auth-section h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--color-text-light);
+        font-weight: 500;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid var(--color-border);
+        border-radius: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .btn-block {
+        display: block;
+        width: 100%;
+    }
+
+    .alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+    }
+</style>
+{% endblock %}
